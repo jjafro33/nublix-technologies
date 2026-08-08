@@ -231,6 +231,40 @@
     });
   });
 
+  /* ---- Job application modal (careers page) ---- */
+  var applyOverlay = document.getElementById("applyModalOverlay");
+  if(applyOverlay){
+    var applyRoleField = document.getElementById("applyRoleField");
+    var applyRoleLabel = document.getElementById("applyModalRole");
+    var applyClose = document.getElementById("applyModalClose");
+
+    function openApplyModal(role){
+      if(applyRoleField) applyRoleField.value = role;
+      if(applyRoleLabel) applyRoleLabel.textContent = role;
+      applyOverlay.classList.add("open");
+      document.body.classList.add("modal-open");
+      var firstField = applyOverlay.querySelector("#a-name");
+      if(firstField) firstField.focus();
+    }
+    function closeApplyModal(){
+      applyOverlay.classList.remove("open");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll("[data-apply-role]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        openApplyModal(btn.getAttribute("data-apply-role") || "this role");
+      });
+    });
+    if(applyClose) applyClose.addEventListener("click", closeApplyModal);
+    applyOverlay.addEventListener("click", function(e){
+      if(e.target === applyOverlay) closeApplyModal();
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && applyOverlay.classList.contains("open")) closeApplyModal();
+    });
+  }
+
   /* ---- Year in footer ---- */
   document.querySelectorAll(".cur-year").forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
