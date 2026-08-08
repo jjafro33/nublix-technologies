@@ -180,7 +180,7 @@
     });
   }
 
-  /* ---- Contact / Quote / Newsletter form handling (client-side demo) ---- */
+  /* ---- Contact / Quote / Newsletter form handling ---- */
   document.querySelectorAll("form[data-nx-form]").forEach(function(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
@@ -194,6 +194,38 @@
         if(msg){ msg.textContent = "Please fill in all required fields."; msg.style.color = "#FF6B6B"; }
         return;
       }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var actionUrl = form.getAttribute("action");
+
+      /* If the form has a real action (e.g. a Formspree endpoint), actually send it. */
+      if(actionUrl){
+        if(submitBtn) submitBtn.disabled = true;
+        if(msg){ msg.textContent = "Sending..."; msg.style.color = "var(--text-dim)"; }
+
+        fetch(actionUrl, {
+          method: form.getAttribute("method") || "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        }).then(function(response){
+          if(response.ok){
+            if(msg){ msg.textContent = "Thanks — your message has been received. We'll reply within 1 business day."; msg.style.color = "var(--cyan)"; }
+            form.reset();
+          } else {
+            return response.json().catch(function(){ return null; }).then(function(data){
+              var errText = (data && data.errors && data.errors.map(function(er){ return er.message; }).join(", ")) || "Something went wrong. Please try again or email us directly.";
+              if(msg){ msg.textContent = errText; msg.style.color = "#FF6B6B"; }
+            });
+          }
+        }).catch(function(){
+          if(msg){ msg.textContent = "Network error — please check your connection and try again."; msg.style.color = "#FF6B6B"; }
+        }).finally(function(){
+          if(submitBtn) submitBtn.disabled = false;
+        });
+        return;
+      }
+
+      /* No action set (e.g. the newsletter form) — fall back to local-only demo behavior. */
       if(msg){ msg.textContent = "Thanks — your message has been received. We'll reply within 1 business day."; msg.style.color = "var(--cyan)"; }
       form.reset();
     });
