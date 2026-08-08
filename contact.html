@@ -65,15 +65,21 @@
       <div class="col-lg-7 reveal">
         <div class="nx-card">
           <h3 style="margin-bottom:20px;">Send us a message</h3>
-          <form data-nx-form aria-label="Contact form">
+          <form data-nx-form aria-label="Contact form" action="https://formsubmit.co/jjafro33@gmail.com" method="POST">
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New contact form submission — Nublix website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Honeypot field to reduce spam; keep this hidden from real users -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="row g-3">
-              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-name">Full name *</label><input id="c-name" class="form-control-nx" required></div>
-              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-email">Email *</label><input id="c-email" type="email" class="form-control-nx" required></div>
-              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-company">Company</label><input id="c-company" class="form-control-nx"></div>
+              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-name">Full name *</label><input id="c-name" name="name" class="form-control-nx" required></div>
+              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-email">Email *</label><input id="c-email" name="email" type="email" class="form-control-nx" required></div>
+              <div class="col-md-6 form-group"><label class="form-label-nx" for="c-company">Company</label><input id="c-company" name="company" class="form-control-nx"></div>
               <div class="col-md-6 form-group"><label class="form-label-nx" for="c-budget">Budget range</label>
-                <select id="c-budget" class="form-select-nx"><option>Under ₹25,000</option><option>₹25,000 – ₹75,000</option><option>₹75,000 – ₹2,00,000</option><option>₹2,00,000+</option></select>
+                <select id="c-budget" name="budget" class="form-select-nx"><option>Under ₹25,000</option><option>₹25,000 – ₹75,000</option><option>₹75,000 – ₹2,00,000</option><option>₹2,00,000+</option></select>
               </div>
-              <div class="col-12 form-group"><label class="form-label-nx" for="c-msg">Project details *</label><textarea id="c-msg" rows="5" class="form-control-nx" required placeholder="What are you looking to build?"></textarea></div>
+              <div class="col-12 form-group"><label class="form-label-nx" for="c-msg">Project details *</label><textarea id="c-msg" name="message" rows="5" class="form-control-nx" required placeholder="What are you looking to build?"></textarea></div>
             </div>
             <button type="submit" class="btn-nx btn-primary lg" style="width:100%;margin-top:6px;">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
             <p class="form-msg" style="margin-top:14px;font-size:13px;"></p>
@@ -84,9 +90,9 @@
         <div class="nx-card" style="margin-bottom:24px;">
           <h3 style="font-size:1.05rem;">Reach us directly</h3>
           <ul style="margin-top:16px;">
-            <li style="display:flex;gap:12px;margin-bottom:16px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span> hello@nublixtech.com</li>
-            <li style="display:flex;gap:12px;margin-bottom:16px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5A11.4 11.4 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.3-8.5c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3-.4.3-.8.1a9.3 9.3 0 01-2.7-1.7 10.2 10.2 0 01-1.9-2.3c-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.6s0-.5 0-.7-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.4 3.6 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg></span> +91 00000 00000 (WhatsApp)</li>
-            <li style="display:flex;gap:12px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span> Chennai, Tamil Nadu, India &middot; Remote-first</li>
+            <li style="display:flex;gap:12px;margin-bottom:16px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>nublixtechnologies@hotmail.com</li>
+            <li style="display:flex;gap:12px;margin-bottom:16px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5A11.4 11.4 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.3-8.5c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3-.4.3-.8.1a9.3 9.3 0 01-2.7-1.7 10.2 10.2 0 01-1.9-2.3c-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.6s0-.5 0-.7-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.4 3.6 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg></span> +91 8903111221 (WhatsApp)</li>
+            <li style="display:flex;gap:12px;color:var(--text-dim);font-size:14px;"><span style="color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span> Midalakkadu,<br>Kanniyakumari,<br> Tamil Nadu, India &middot; Remote-first</li>
           </ul>
         </div>
         <div class="nx-card" style="padding:0;overflow:hidden;">
@@ -153,7 +159,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; <span class="cur-year">2026</span> NUBLIX TECHNOLOGIES. All rights reserved.</span>
-      <span>Built by Nublix &mdash; Chennai, India &amp; Remote</span>
+      <span>Built by Nublix &mdash; KanniyaKumari, India &amp; Remote</span>
       <span><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms &amp; Conditions</a></span>
     </div>
   </div>
@@ -162,7 +168,7 @@
 <button class="back-to-top" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 </button>
-<a href="https://wa.me/910000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5A11.4 11.4 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.3-8.5c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3-.4.3-.8.1a9.3 9.3 0 01-2.7-1.7 10.2 10.2 0 01-1.9-2.3c-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.6s0-.5 0-.7-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.4 3.6 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg></a>
+<a href="https://wa.me/+91 8903111221" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5A11.4 11.4 0 014.6 16C4.6 9.7 9.7 4.6 16 4.6S27.4 9.7 27.4 16 22.3 27.4 16 27.4zm6.3-8.5c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3-.4.3-.8.1a9.3 9.3 0 01-2.7-1.7 10.2 10.2 0 01-1.9-2.3c-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.6s0-.5 0-.7-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.4 3.6 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg></a>
 <button id="chat-toggle" class="whatsapp-float" style="left:auto;right:100px;bottom:28px;background:var(--grad-signal);color:#03110F;display:none;" aria-label="Open live chat"></button>
 <div class="chat-bubble" id="chat-bubble" role="dialog" aria-label="Live chat">
   <div class="ch-head"><b>Nublix Support</b><button class="ch-close" id="chat-close" aria-label="Close chat">&times;</button></div>
