@@ -65,17 +65,11 @@
       <div class="col-lg-7 reveal">
         <div class="nx-card">
           <h3 style="margin-bottom:20px;">Send us a message</h3>
-          <form data-nx-form aria-label="Contact form" action="https://formsubmit.co/jjafro33@gmail.com" method="POST">
-            <!-- FormSubmit configuration -->
+          <form data-nx-form aria-label="Contact form" action="https://formspree.io/f/xjybgyed" method="POST">
+            <!-- Formspree configuration -->
             <input type="hidden" name="_subject" value="New contact form submission — Nublix website">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <!-- Pins the submission to this exact page URL so FormSubmit doesn't rely on
-                 the browser referrer header (which can be blank/blocked when testing
-                 locally or under strict referrer policies) -->
-            <input type="hidden" name="_url" value="https://nublixtech.com/contact.html">
-            <!-- Honeypot field to reduce spam; keep this hidden from real users -->
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <!-- Honeypot field to reduce spam; Formspree auto-detects this field name -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
             <div class="row g-3">
               <div class="col-md-6 form-group"><label class="form-label-nx" for="c-name">Full name *</label><input id="c-name" name="name" class="form-control-nx" required></div>
               <div class="col-md-6 form-group"><label class="form-label-nx" for="c-email">Email *</label><input id="c-email" name="email" type="email" class="form-control-nx" required></div>
