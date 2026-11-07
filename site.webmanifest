@@ -1,0 +1,15 @@
+{
+  "name": "NUBLIX TECH",
+  "short_name": "NUBLIX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E17",
+  "theme_color": "#0A0E17",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
